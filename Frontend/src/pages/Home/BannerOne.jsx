@@ -3,9 +3,9 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function BannerOne({
   title = "आज की लीक जोड़ी यहाँ मिलेगी",
-  subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए ",
+  subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए",
   name = "RAAJA BHAI",
-  branch = "SATTA KING HEAD BRANCH MUMBAI ",
+  branch = "SATTA KING HEAD BRANCH MUMBAI",
   phone = "9541015623",
 }) {
   const telLink = `tel:${phone}`;
@@ -19,17 +19,16 @@ export default function BannerOne({
         <h1 className="font-bold text-yellow-400 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
           {title}
         </h1>
-            <br />
-             <span className="text-xl text-white ">🎯FARIDABAD GAZIYABAD GALI DS🎯
 
-</span>
+        {/* Custom highlight line */}
+        <p className="text-xl sm:text-2xl text-white mt-2">
+          🎯 FARIDABAD GAZIYABAD GALI DS 🎯
+        </p>
 
         {/* Subtitle */}
-        <p className="mt-2 text-yellow-200 text-xl sm:text-base md:text-xl max-w-3xl mx-auto px-4 sm:px-0">
+        <p className="mt-4 text-yellow-200 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 sm:px-0">
           <span className="inline-block align-middle mr-2">🎯</span>
-       
           <span className="sm:inline">{subtitle}</span>
-      
         </p>
 
         {/* Name + Branch */}
@@ -37,25 +36,23 @@ export default function BannerOne({
           <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold tracking-wide">
             {name}
           </p>
-          <p className="text-yellow-300 text-base sm:text-lg md:text-xl mt-1">{branch}</p>
+          <p className="text-yellow-300 text-base sm:text-lg md:text-xl mt-1">
+            {branch}
+          </p>
         </div>
 
         {/* Phone and buttons */}
         <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          
-          {/* Phone number (hidden on very small screens) */}
+
+          {/* Phone number (hidden on small screens) */}
           <div className="hidden sm:block">
             <p className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
               {phone}
-
-          
-
             </p>
           </div>
+
           {/* Action buttons */}
-          
           <div className="flex items-center gap-3 flex-wrap justify-center">
-          
             <a
               href={telLink}
               className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg transition-transform transform hover:-translate-y-0.5"
@@ -80,9 +77,12 @@ export default function BannerOne({
 
         {/* Small note */}
         <p className="mt-4 text-yellow-200 text-xs sm:text-sm md:text-base max-w-3xl mx-auto px-4 sm:px-0">
-          <span className="hidden sm:inline">नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा।</span>
+          <span className="hidden sm:inline">
+            नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा।
+          </span>
           <span className="sm:hidden">नंबर सेव करे और मैसेज करे।</span>
         </p>
+
       </div>
     </section>
   );
