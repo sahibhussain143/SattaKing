@@ -1,52 +1,91 @@
-import React from "react";
 
-const BannerOne = () => {
-  const openWhatsApp = () => {
-    const phoneNumber = "9541015623"; // replace with your number
-    const message = "Hello Raaj Bhai Khaiwal  I’m interested in your service.";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
+
+
+
+
+import React from "react";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+
+// BannerOne: fully responsive banner component using Tailwind CSS
+// Usage:
+// <BannerOne
+//   title="आज की लीक जोड़ी यहाँ मिलेगी"
+//   subtitle="नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए..."
+//   name="RAJ KUMAR (MD)"
+//   branch="SATTA KING HEAD BRANCH"
+//   phone="7451956934"
+// />
+
+export default function BannerOne({
+  title = "आज की लीक जोड़ी यहाँ मिलेगी",
+  subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए",
+  name = "RAJ KUMAR (MD)",
+  branch = "SATTA KING HEAD BRANCH",
+  phone = "9541015623",
+}) {
+  const telLink = `tel:${phone}`;
+  const whatsappLink = `https://wa.me/${phone.replace(/[^0-9]/g, "")}`;
 
   return (
-    <div className="border-4 border-blue-600 rounded-lg p-6 text-center relative bg-white">
-      {/* Yellow Top Border */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-yellow-400 rounded-t-lg"></div>
+    <section className="w-full bg-gradient-to-b from-[#04232b] via-[#07323a] to-[#0f3f41] text-center py-8 md:py-12 lg:py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Headline */}
+        <h1 className="font-bold text-yellow-400 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
+          {title}
+        </h1>
 
-      {/* Heading */}
-      <h2 className="font-bold text-lg md:text-xl mb-4">
-        🎯 FARIDABAD , GAZIABAD, GALI, DESAWAR 🎯
-      </h2>
+        {/* small decorative line / subtitle - hidden on very small screens to keep layout clean */}
+        <p className="mt-2 text-yellow-200 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 sm:px-0">
+          <span className="inline-block align-middle mr-2">🎯</span>
+          <span className="hidden xs:inline-block md:inline">{subtitle}</span>
+        </p>
 
-      {/* Paragraph */}
-      <p className="font-semibold text-md leading-relaxed mb-4">
-        MAI GAME MILEGA SINGLE JODI 1001% PASS 💥 ✅✅✅  
-        JISKA BHI LOSS HO KARJA HO SARA COVER KR LO MAHINE KA LAKHO PROFIT KRO 🏅🏅🏅  
-        JIS BHAI KO DIRECT COMPANY KE SATH MIL KAR KAAM KARNA HAI 🏅🏅🏅  
-        ABHI WHATSAPP KAREN 🎯✅💥
-      </p>
+        {/* Name + Branch - responsive sizing */}
+        <div className="mt-6 md:mt-8">
+          <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide">
+            {name}
+          </p>
+          <p className="text-yellow-300 text-base sm:text-lg md:text-xl mt-1">{branch}</p>
+        </div>
 
-      <p className="text-black font-medium mb-2">
-        नंबर सेव करके जल्दी व्हाट्सएप पे मैसेज कीजिए गारंटी के साथ काम होगा
-      </p>
+        {/* Phone number and action buttons */}
+        <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Phone number - hide on very small screens and show on sm+ */}
+          <div className="hidden sm:block">
+            <p className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
+              {phone}
+            </p>
+          </div>
 
-      {/* Name Highlight */}
-      <h3 className="text-red-600 font-bold text-xl mb-2">
-        👑👑 Raaj Bhai Khaiwal 👑👑
-      </h3>
+          <div className="flex items-center gap-3">
+            <a
+              href={telLink}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg transition-transform transform hover:-translate-y-0.5"
+              aria-label={`Call ${phone}`}
+            >
+              <FaPhoneAlt />
+              <span className="uppercase">Call Now</span>
+            </a>
 
-      {/* Number */}
-      <p className="text-green-600 font-bold text-2xl mb-4">9541015623</p>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-green-700 hover:bg-green-800 text-white font-semibold shadow-lg transition-transform transform hover:-translate-y-0.5"
+              aria-label={`WhatsApp ${phone}`}
+            >
+              <FaWhatsapp />
+              <span className="uppercase">WhatsApp</span>
+            </a>
+          </div>
+        </div>
 
-      {/* WhatsApp Button */}
-      <button
-        onClick={openWhatsApp}
-        className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-full shadow-lg transition transform hover:scale-110"
-      >
-        WHATSAPP
-      </button>
-    </div>
+        {/* Small note under buttons - condensed on mobile */}
+        <p className="mt-4 text-yellow-200 text-xs sm:text-sm md:text-base max-w-3xl mx-auto px-4 sm:px-0">
+          <span className="hidden sm:inline">नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा।</span>
+          <span className="sm:hidden">नंबर सेव करे और मैसेज करे।</span>
+        </p>
+      </div>
+    </section>
   );
-};
-
-export default BannerOne;
+}

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BannerOne from './BannerOne';
+import BannerTwo from './BannerTow';
 
 const Home = () => {
   return (
 
     <>
           <BannerOne/>
-
+            <BannerTwo/>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
