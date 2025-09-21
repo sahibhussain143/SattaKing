@@ -20,12 +20,12 @@ export default function BannerOne({
           {title}
         </h1>
             <br />
-             <span className="text-xl text-white">🎯FARIDABAD GAZIYABAD GALI DS🎯
+             <span className="text-xl text-white ">🎯FARIDABAD GAZIYABAD GALI DS🎯
 
 </span>
 
         {/* Subtitle */}
-        <p className="mt-2 text-yellow-200 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 sm:px-0">
+        <p className="mt-2 text-yellow-200 text-xl sm:text-base md:text-xl max-w-3xl mx-auto px-4 sm:px-0">
           <span className="inline-block align-middle mr-2">🎯</span>
        
           <span className="sm:inline">{subtitle}</span>
@@ -46,9 +46,9 @@ export default function BannerOne({
           {/* Phone number (hidden on very small screens) */}
           <div className="hidden sm:block">
             <p className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
-              {/* {phone} */}
+              {phone}
 
-              <h1>9541015623</h1>
+          
 
             </p>
           </div>
