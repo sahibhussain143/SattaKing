@@ -5,6 +5,8 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Loading from './Components/Loading';
 import ErrorBoundary from './Components/ErrorBoundary';
+import FloatingButtons from './Components/FloatingButtons';
+import FloatingButtonsTelegram from './Components/FloatingButtonsTelegram';
 
 // Lazy load pages with retry mechanism
 const lazyWithRetry = (componentImport) => {
@@ -29,7 +31,7 @@ const lazyWithRetry = (componentImport) => {
 };
 
 // Lazy load pages
-const Home = lazyWithRetry(() => import('./pages/Home'));
+const Home = lazyWithRetry(() => import('./pages/Home/Home'));
 const History = lazyWithRetry(() => import('./pages/History'));
 const Statistics = lazyWithRetry(() => import('./pages/Statistics'));
 const About = lazyWithRetry(() => import('./pages/About'));
@@ -54,7 +56,8 @@ function App() {
             </Suspense>
           </ErrorBoundary>
         </main>
-        
+        <FloatingButtonsTelegram/>
+        <FloatingButtons/>
         <Footer />
       </div>
     </Router>
