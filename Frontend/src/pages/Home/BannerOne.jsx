@@ -14,7 +14,7 @@ export default function BannerOne({
   return (
     <>
     
-      <section className="w-full bg-gradient-to-b from-[#04232b] via-[#07323a] to-[#0f3f41] text-center py-8 md:py-12 lg:py-20 px-4">
+      <section className="w-full bg-gradient-to-b mt-8 from-[#04232b] via-[#07323a] to-[#0f3f41] text-center py-8 md:py-12 lg:py-20 px-4">
         <div className="max-w-6xl mx-auto">
 
           {/* Headline */}

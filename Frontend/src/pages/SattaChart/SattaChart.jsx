@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const History = () => {
+const SattaChart = () => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedGame, setSelectedGame] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -267,4 +267,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default SattaChart;

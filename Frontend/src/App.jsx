@@ -7,6 +7,8 @@ import Loading from './Components/Loading';
 import ErrorBoundary from './Components/ErrorBoundary';
 import FloatingButtons from './Components/FloatingButtons';
 import FloatingButtonsTelegram from './Components/FloatingButtonsTelegram';
+import SattaChart from './pages/SattaChart/SattaChart';
+import TajSattaKing from './pages/TajSattaKing/TajSattaKing';
 
 // Lazy load pages with retry mechanism
 const lazyWithRetry = (componentImport) => {
@@ -32,10 +34,10 @@ const lazyWithRetry = (componentImport) => {
 
 // Lazy load pages
 const Home = lazyWithRetry(() => import('./pages/Home/Home'));
-const History = lazyWithRetry(() => import('./pages/History'));
-const Statistics = lazyWithRetry(() => import('./pages/Statistics'));
-const About = lazyWithRetry(() => import('./pages/About'));
-const Updates = lazyWithRetry(() => import('./pages/Updates'));
+const History = lazyWithRetry(() => import('./pages/SattaChart/SattaChart'));
+const Statistics = lazyWithRetry(() => import('./pages/TajSattaKing/TajSattaKing'));
+const About = lazyWithRetry(() => import('./pages/About/About'));
+const Updates = lazyWithRetry(() => import('./pages/Updates/Updates'));
 
 function App() {
   return (
@@ -48,8 +50,8 @@ function App() {
             <Suspense fallback={<Loading />}>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/history" element={<History />} />
-                <Route path="/statistics" element={<Statistics />} />
+                <Route path="/SattaChart" element={<SattaChart />} />
+                <Route path="/TajSattaKing" element={<TajSattaKing />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/updates" element={<Updates />} />
               </Routes>

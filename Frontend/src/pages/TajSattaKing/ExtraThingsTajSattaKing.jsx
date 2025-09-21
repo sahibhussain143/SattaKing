@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import TajSattaKingBanner from './TajSattaKingBanner';
+import TajSattaKingBannerOne from './TajSattaKingBannerOne';
 
-const Statistics = () => {
+const ExtraThingsTajSattaKing = () => {
   const [timeRange, setTimeRange] = useState('7days');
   const [selectedGame, setSelectedGame] = useState('all');
   const [statsData, setStatsData] = useState(null);
@@ -75,6 +77,9 @@ const Statistics = () => {
   const renderBarChart = (data, color = 'purple') => {
     const maxValue = Math.max(...data);
     return (
+
+
+
       <div className="flex items-end h-40 gap-1 mt-4">
         {data.map((value, index) => (
           <div key={index} className="flex flex-col items-center flex-1">
@@ -91,6 +96,7 @@ const Statistics = () => {
     );
   };
 
+ 
   // Function to render frequency chart
   const renderFrequencyChart = (numbers, title, color = 'purple') => {
     return (
@@ -112,6 +118,7 @@ const Statistics = () => {
 
   if (loading) {
     return (
+      
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600"></div>
@@ -124,7 +131,56 @@ const Statistics = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+
+
+      
+        {/* Probability Analysis */}
+        <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
+          <h3 className="text-lg font-semibold text-purple-800 mb-2">Probability Analysis</h3>
+          <p className="text-purple-700 mb-4">
+            Based on historical data analysis, numbers ending with 7 have appeared 23% more frequently than average
+            in the last 30 days. However, remember that past results do not guarantee future outcomes.
+          </p>
+          <div className="bg-white p-4 rounded-lg">
+            <h4 className="font-medium text-gray-700 mb-2">Top Number Patterns</h4>
+            <ul className="list-disc list-inside text-gray-600 space-y-1">
+              <li>Numbers between 200-300: 18% frequency</li>
+              <li>Even numbers: 52% occurrence rate</li>
+              <li>Numbers ending with 5 or 0: 12% frequency</li>
+              <li>Prime numbers: 28% occurrence rate</li>
+            </ul>
+          </div>
+          <div className="mt-4 text-sm text-purple-600">
+            <Link to="/history" className="flex items-center font-medium">
+              View detailed historical data
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mt-8 bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+          <div className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="h-6 w-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </div>
+            <div className="ml-3">
+              <h3 className="text-lg font-semibold text-red-800 mb-2">Statistical Disclaimer</h3>
+              <p className="text-red-700">
+                All statistical analysis provided is based on historical data and mathematical probability.
+                These analyses do not guarantee future results. Gambling involves significant risk and should
+                be approached responsibly. Never gamble more than you can afford to lose.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Page Header */}
+
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Advanced Statistics</h1>
           <p className="text-gray-600">Analyze patterns, trends, and probabilities</p>
@@ -319,54 +375,11 @@ const Statistics = () => {
             </table>
           </div>
         </div>
-
-        {/* Probability Analysis */}
-        <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
-          <h3 className="text-lg font-semibold text-purple-800 mb-2">Probability Analysis</h3>
-          <p className="text-purple-700 mb-4">
-            Based on historical data analysis, numbers ending with 7 have appeared 23% more frequently than average
-            in the last 30 days. However, remember that past results do not guarantee future outcomes.
-          </p>
-          <div className="bg-white p-4 rounded-lg">
-            <h4 className="font-medium text-gray-700 mb-2">Top Number Patterns</h4>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Numbers between 200-300: 18% frequency</li>
-              <li>Even numbers: 52% occurrence rate</li>
-              <li>Numbers ending with 5 or 0: 12% frequency</li>
-              <li>Prime numbers: 28% occurrence rate</li>
-            </ul>
-          </div>
-          <div className="mt-4 text-sm text-purple-600">
-            <Link to="/history" className="flex items-center font-medium">
-              View detailed historical data
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </Link>
-          </div>
-        </div>
-
-        {/* Disclaimer */}
-        <div className="mt-8 bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
-          <div className="flex items-start">
-            <div className="flex-shrink-0">
-              <svg className="h-6 w-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-              </svg>
-            </div>
-            <div className="ml-3">
-              <h3 className="text-lg font-semibold text-red-800 mb-2">Statistical Disclaimer</h3>
-              <p className="text-red-700">
-                All statistical analysis provided is based on historical data and mathematical probability.
-                These analyses do not guarantee future results. Gambling involves significant risk and should
-                be approached responsibly. Never gamble more than you can afford to lose.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
+    
     </div>
+    
   );
 };
 
-export default Statistics;
+export default ExtraThingsTajSattaKing; 

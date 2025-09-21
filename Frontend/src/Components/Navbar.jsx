@@ -23,10 +23,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "History", path: "/history" },
-    { name: "Statistics", path: "/statistics" },
-    { name: "About", path: "/about" },
-    { name: "Updates", path: "/updates" },
+    { name: "SATTA CHART", path: "/SattaChart" },
+    { name: "TAJ SATTA KING", path: "/TajSattaKing" },
+    { name: "ABOUT ", path: "/about" },
+    { name: "UPDATES", path: "/updates" },
   ];
 
   return (
