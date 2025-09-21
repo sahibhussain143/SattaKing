@@ -32,7 +32,7 @@ const BannerTwo = () => {
 
       {/* Name Highlight */}
       <h3 className="text-red-600 font-bold text-xl mb-2">
-        👑👑 Leak Jodi 👑👑
+        👑👑 LEAK JODI👑👑
       </h3>
 
       {/* Number */}

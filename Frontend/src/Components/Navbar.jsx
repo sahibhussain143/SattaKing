@@ -73,6 +73,15 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+         <marquee
+        behavior="scroll"
+        direction="left"
+        scrollamount="5"
+        className="w-full bg-black text-yellow-400 font-semibold py-2"
+      >
+आज की leak game और single Jodi numbers तुरंत पाएँ! Contact now 9541015623 for confirmed results, live Gali & Desawar charts, daily SATTA updates, accurate tips, और exclusive Satta King predictions। नंबर सेव करें और तुरंत WhatsApp करें। Today’s lucky numbers, leak games, single Jodi tips, और latest Satta King results सिर्फ हमारे साथ। Miss mat करें, जल्दी action लें और जीतें!
+
+      </marquee>
     </nav>
   );
 };
