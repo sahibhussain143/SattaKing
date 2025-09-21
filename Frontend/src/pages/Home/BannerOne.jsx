@@ -6,20 +6,19 @@
 import React from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
-// BannerOne: fully responsive banner component using Tailwind CSS
-// Usage:
-// <BannerOne
-//   title="आज की लीक जोड़ी यहाँ मिलेगी"
-//   subtitle="नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए..."
-//   name="RAJ KUMAR (MD)"
-//   branch="SATTA KING HEAD BRANCH"
-//   phone="7451956934"
-// />
+
+<BannerOne
+  title="आज की लीक जोड़ी यहाँ मिलेगी"
+  subtitle="नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए..."
+  name="RAAJ BHAI  (MD)"
+  branch="SATTA KING HEAD BRANCH"
+  phone="9541015623"
+/>
 
 export default function BannerOne({
   title = "आज की लीक जोड़ी यहाँ मिलेगी",
   subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए",
-  name = "RAJ KUMAR (MD)",
+  name = "RAAJ BHAI ",
   branch = "SATTA KING HEAD BRANCH",
   phone = "9541015623",
 }) {
