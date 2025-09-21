@@ -45,7 +45,7 @@ export default function BannerOne({
         <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
 
           {/* Phone number (hidden on small screens) */}
-          <div className="hidden sm:block">
+          <div className="">
             <p className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
               {phone}
             </p>
@@ -77,10 +77,10 @@ export default function BannerOne({
 
         {/* Small note */}
         <p className="mt-4 text-yellow-200 text-xs sm:text-sm md:text-base max-w-3xl mx-auto px-4 sm:px-0">
-          <span className="hidden sm:inline">
+          <span className="">
             नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा।
           </span>
-          <span className="sm:hidden">नंबर सेव करे और मैसेज करे।</span>
+          <span className="">नंबर सेव करे और मैसेज करे।</span>
         </p>
 
       </div>
