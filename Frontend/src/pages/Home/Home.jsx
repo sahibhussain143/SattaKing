@@ -4,6 +4,10 @@ import BannerOne from './BannerOne';
 
 const Home = () => {
   return (
+
+    <>
+          <BannerOne/>
+
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
@@ -123,8 +127,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <BannerOne/>
     </div>
+    </>
   );
 };
 
