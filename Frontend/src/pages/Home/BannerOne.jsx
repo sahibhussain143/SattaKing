@@ -3,9 +3,9 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function BannerOne({
   title = "आज की लीक जोड़ी यहाँ मिलेगी",
-  subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए 🎯FARIDABAD GAZIYABAD GALI DS🎯",
-  name = "RAAJ BHAI",
-  branch = "SATTA KING HEAD BRANCH",
+  subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए ",
+  name = "RAAJA BHAI",
+  branch = "SATTA KING HEAD BRANCH MUMBAI ",
   phone = "9541015623",
 }) {
   const telLink = `tel:${phone}`;
@@ -19,16 +19,22 @@ export default function BannerOne({
         <h1 className="font-bold text-yellow-400 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
           {title}
         </h1>
+            <br />
+             <span className="text-xl text-white">🎯FARIDABAD GAZIYABAD GALI DS🎯
+
+</span>
 
         {/* Subtitle */}
         <p className="mt-2 text-yellow-200 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 sm:px-0">
           <span className="inline-block align-middle mr-2">🎯</span>
+       
           <span className="sm:inline">{subtitle}</span>
+      
         </p>
 
         {/* Name + Branch */}
         <div className="mt-6 md:mt-8">
-          <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide">
+          <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold tracking-wide">
             {name}
           </p>
           <p className="text-yellow-300 text-base sm:text-lg md:text-xl mt-1">{branch}</p>
@@ -40,12 +46,16 @@ export default function BannerOne({
           {/* Phone number (hidden on very small screens) */}
           <div className="hidden sm:block">
             <p className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
-              {phone}
+              {/* {phone} */}
+
+              <h1>9541015623</h1>
+
             </p>
           </div>
-
           {/* Action buttons */}
+          
           <div className="flex items-center gap-3 flex-wrap justify-center">
+          
             <a
               href={telLink}
               className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg transition-transform transform hover:-translate-y-0.5"
