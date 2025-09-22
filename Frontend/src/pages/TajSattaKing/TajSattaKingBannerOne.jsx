@@ -186,6 +186,11 @@ export default function TajSattaKingBannerOne() {
           <FaWhatsapp /> WHATSAPP
         </a>
       </div>
+
+
+
+
+      
     </div>
   );
 }

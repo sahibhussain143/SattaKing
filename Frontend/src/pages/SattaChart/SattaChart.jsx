@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SattaChartBanner from './SattaChartBanner';
 
 const SattaChart = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -263,6 +264,8 @@ const SattaChart = () => {
           </div>
         </div>
       </div>
+
+      <SattaChartBanner/>
     </div>
   );
 };
