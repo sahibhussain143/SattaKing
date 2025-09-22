@@ -137,7 +137,7 @@ export default function TajSattaKingBannerOne() {
 
       {/* Middle Left Sidebar */}
       {sidebarVisible && (
-        <div className="fixed left-0 top-1/2 transform -translate-y-2/2 bg-[#004b66] text-white p-4 rounded-r-lg shadow-lg flex flex-col gap-2 w-44 z-50">
+        <div className="fixed left-0 -bottom-24 transform -translate-y-1/2 bg-[#004b66] text-white p-4 rounded-r-lg shadow-lg flex flex-col gap-2 w-44 z-50">
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-sm">CHATE NOW 🤙</span>
             <button
