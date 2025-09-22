@@ -4,6 +4,7 @@ import BannerOne from './BannerOne';
 import BannerTwo from './BannerTow';
 import React from 'react'
 import ExtraThingsHome from './ExtraThingsHome';
+import SattaChart from '../SattaChart/SattaChart';
 
 function Home() {
   return (
@@ -12,6 +13,8 @@ function Home() {
        <BannerTwo/>
 
        <TajSattaKing/>
+
+       <SattaChart/>
        <ExtraThingsHome/>
    
     </div>
