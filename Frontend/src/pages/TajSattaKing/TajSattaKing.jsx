@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import TajSattaKingBanner from './TajSattaKingBanner';
 import TajSattaKingBannerOne from './TajSattaKingBannerOne';
 import ExtraThingsTajSattaKing from './ExtraThingsTajSattaKing';
+import SattaTajSattaBannerTwo from './SattaTajSattaBannerTwo';
 function TajSattaKing() {
   return (
     <div>
          <TajSattaKingBanner/>
     <TajSattaKingBannerOne/>
-    <ExtraThingsTajSattaKing/>
+    {/* <ExtraThingsTajSattaKing/> */}
+    <SattaTajSattaBannerTwo/>
 
     </div>
   )
