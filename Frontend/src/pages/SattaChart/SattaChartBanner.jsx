@@ -74,12 +74,13 @@ const sattaData = [
 ];
 
 const SattaChartBanner = () => {
-  const whatsappNumber = "9728379960";
+  const whatsappNumber = "8813965623";
   const telegramLink = "https://t.me/+kbqlUMGnqXJmMTM1";
 
-  const openWhatsApp = (item) => {
+  // Changed message here:
+  const openWhatsApp = () => {
     window.open(
-      `https://wa.me/91${whatsappNumber}?text=Hello,%20please%20send%20details%20about%20${item.name}%20${item.number}`,
+      `https://wa.me/91${whatsappNumber}?text=I%20am%20interested`,
       "_blank"
     );
   };
@@ -89,9 +90,7 @@ const SattaChartBanner = () => {
   };
 
   return (
- 
-   <div className="bg-gradient-to-b from-gray-900 to-black">
-   
+    <div className="bg-gradient-to-b from-gray-900 to-black">
       {/* SATTA CHART TABLES */}
       <h1 className="text-center text-red-500 text-2xl md:text-3xl font-bold mb-2">
         SATTA GAME CHART
@@ -99,10 +98,7 @@ const SattaChartBanner = () => {
 
       <div className="w-full">
         {sattaData.map((section, index) => (
-          <div
-            key={index}
-            className="mb-4  bg-white w-full"
-          >
+          <div key={index} className="mb-4 bg-white w-full">
             <h2 className="bg-black text-yellow-300 text-center font-bold py-1 text-lg md:text-xl">
               {section.title}
             </h2>
@@ -119,15 +115,18 @@ const SattaChartBanner = () => {
                 {section.items.map((item, i) => (
                   <tr
                     key={i}
-                    className={`${i % 2 === 0 ? "bg-white" : "bg-gray-100"} text-blue-900`}
+                    className={`${
+                      i % 2 === 0 ? "bg-white" : "bg-gray-100"
+                    } text-blue-900`}
                   >
                     <td className="py-1 px-1 border border-black font-semibold uppercase">
                       {item.name}
                     </td>
                     <td className="py-1 px-1 border border-black">{item.number}</td>
                     <td className="py-1 px-1 border border-black flex justify-center gap-2">
+                      {/* Changed here, removed item param */}
                       <FaWhatsapp
-                        onClick={() => openWhatsApp(item)}
+                        onClick={openWhatsApp}
                         className="text-green-600 cursor-pointer text-lg hover:scale-110 transition"
                       />
                       <FaTelegramPlane
@@ -195,7 +194,7 @@ const SattaChartBanner = () => {
           <h1 className="font-bold text-xl p-2 text-white">🪀9728379960🪀</h1>
 
           <a
-            href={`https://wa.me/91${whatsappNumber}`}
+            href={`https://wa.me/919728379960`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-green-500 text-white text-lg px-4 py-1.5 rounded-full font-semibold shadow hover:bg-green-600 transition transform hover:scale-105"
