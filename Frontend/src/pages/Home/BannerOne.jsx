@@ -4,19 +4,18 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 export default function BannerOne({
   title = "आज की लीक जोड़ी यहाँ मिलेगी",
   subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए",
-  name = "👑👑RAAJA BHAI👑👑",
+  name = "👑👑RAJAN BHAI👑👑",
   branch = "SATTA KING HEAD BRANCH MUMBAI",
-  phone = "9541015623",
+  phone = "8813965623", // changed number here
 }) {
+  // Make sure WhatsApp link includes country code (+91 for India)
   const telLink = `tel:${phone}`;
-  const whatsappLink = `https://wa.me/${phone.replace(/[^0-9]/g, "")}`;
+  const whatsappLink = `https://wa.me/91${phone.replace(/[^0-9]/g, "")}`;
 
   return (
     <>
-    
       <section className="w-full bg-gradient-to-b mt-8 from-[#04232b] via-[#07323a] to-[#0f3f41] text-center py-8 md:py-12 lg:py-20 px-4">
         <div className="max-w-6xl mx-auto">
-
           {/* Headline */}
           <h1 className="font-bold text-yellow-400 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
             {title}
@@ -45,7 +44,6 @@ export default function BannerOne({
 
           {/* Phone and buttons */}
           <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-
             {/* Phone number */}
             <div>
               <p className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
@@ -79,9 +77,7 @@ export default function BannerOne({
 
           {/* Small note */}
           <p className="mt-4 text-yellow-200 text-xs sm:text-sm md:text-base max-w-3xl mx-auto px-4 sm:px-0">
-            <span>
-              नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा।
-            </span>
+            <span>नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा। </span>
             <span>नंबर सेव करे और मैसेज करे।</span>
           </p>
         </div>

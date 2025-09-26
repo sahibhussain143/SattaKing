@@ -9,14 +9,14 @@ import SattaChart from '../SattaChart/SattaChart';
 function Home() {
   return (
     <div>
-      <BannerOne/>
-       <BannerTwo/>
+      <BannerOne />
+      <BannerTwo />
 
-       <TajSattaKing/>
+      <TajSattaKing />
 
-       <SattaChart/>
-       <ExtraThingsHome/>
-   
+      <SattaChart />
+      <ExtraThingsHome />
+
     </div>
   )
 }

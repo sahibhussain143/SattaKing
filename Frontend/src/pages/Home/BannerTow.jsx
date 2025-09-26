@@ -2,10 +2,11 @@ import React from "react";
 
 const BannerTwo = () => {
   const openWhatsApp = () => {
-    const phoneNumber = "9541015623"; // replace with your number
-    const message = "Hello Raaj Bhai Khaiwal  I’m interested in your service.";
+    const phoneNumber = "918813965623"; // country code + number (no +)
+    const message = "Hello Raaj Bhai Khaiwal I’m interested in your service.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    console.log("Opening WhatsApp URL:", url); // debug
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -36,7 +37,7 @@ const BannerTwo = () => {
       </h3>
 
       {/* Number */}
-      <p className="text-green-600 font-bold text-2xl mb-4">9541015623</p>
+      <p className="text-green-600 font-bold text-2xl mb-4">8813965623</p>
 
       {/* WhatsApp Button */}
       <button
@@ -50,4 +51,3 @@ const BannerTwo = () => {
 };
 
 export default BannerTwo;
-

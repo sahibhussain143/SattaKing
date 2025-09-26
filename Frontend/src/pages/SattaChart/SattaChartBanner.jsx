@@ -74,7 +74,7 @@ const sattaData = [
 ];
 
 const SattaChartBanner = () => {
-  const whatsappNumber = "9541015623";
+  const whatsappNumber = "9728379960";
   const telegramLink = "https://t.me/+kbqlUMGnqXJmMTM1";
 
   const openWhatsApp = (item) => {
@@ -192,7 +192,7 @@ const SattaChartBanner = () => {
           <p className="text-2xl md:text-3xl font-semibold text-orange-300 drop-shadow-md mb-3">
             🌟 जनता का विश्वास ही खाईवाल की पहचान है 🌟
           </p>
-          <h1>🪀9541015623🪀</h1>
+          <h1 className="font-bold text-xl p-2 text-white">🪀9728379960🪀</h1>
 
           <a
             href={`https://wa.me/91${whatsappNumber}`}
