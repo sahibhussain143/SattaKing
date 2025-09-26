@@ -3,7 +3,7 @@ import React from "react";
 const TajSattaKingBanner = () => {
   const openWhatsApp = () => {
     const phoneNumber = "918813965623"; // country code + number (no '+')
-    const message = "Hello Rajan Bhai Khaiwal I’m interested in your service.";
+    const message = "Hello Rajan Bhai I’m interested in your service.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };

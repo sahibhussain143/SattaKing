@@ -21,7 +21,7 @@ const InfoBlock = ({ title, contentLines, actions }) => {
             return (
               <a
                 key={idx}
-                href={`https://wa.me/8813965623?text=${encodeURIComponent(
+                href={`https://wa.me/918813965623?text=${encodeURIComponent(
                   action.message || "Hello, I'm interested."
                 )}`}
                 target="_blank"

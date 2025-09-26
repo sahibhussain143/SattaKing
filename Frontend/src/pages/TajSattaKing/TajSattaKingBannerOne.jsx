@@ -7,7 +7,7 @@ export default function TajSattaKingBannerOne() {
 
   // Items for sidebar with label, message, and which number to use
   const sideBoxItems = [
-    { label: "RAAJA BHAI", message: "Hello Raaja Bhai!", phone: gamePhone },
+    { label: "RAJAN BHAI", message: "Hello Rajan Bhai!", phone: gamePhone },
     { label: "ONLINE", message: "I want today's online result.", phone: gamePhone },
     { label: "KHAIWAL", message: "Please send leak jodi.", phone: khaiwalPhone },
     { label: "जोड़ी रेट", message: "Send rate details.", phone: gamePhone },
@@ -43,7 +43,7 @@ export default function TajSattaKingBannerOne() {
             CALL NOW
           </a>
           <a
-            href={generateWhatsappLink("Hello Raaja Bhai, I want the single Jodi of today's Satta game.", gamePhone)}
+            href={generateWhatsappLink("Hello Rajan Bhai, I want the single Jodi of today's Satta game.", gamePhone)}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition transform hover:-translate-y-1 inline-flex items-center justify-center gap-2"
@@ -62,7 +62,7 @@ export default function TajSattaKingBannerOne() {
           Online game khelne ke liye niche diye hue number par message karein
         </p>
         <a
-          href={generateWhatsappLink("Hello Raaja Bhai, I want the single Jodi of today's Satta game.", khaiwalPhone)}
+          href={generateWhatsappLink("Hello Raaja Bhai, I am  intrested in your service .", khaiwalPhone)}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition transform hover:-translate-y-1 inline-flex items-center justify-center gap-2"
@@ -111,7 +111,7 @@ export default function TajSattaKingBannerOne() {
           <p className="text-yellow-600 text-2xl font-bold">SATTA KING</p>
           <p className="text-green-700 text-2xl font-bold mb-6">{gamePhone}</p>
           <a
-            href={generateWhatsappLink("Hello Raaja Bhai, I want the single Jodi of today's Satta game.", gamePhone)}
+            href={generateWhatsappLink("Hello Rajan Bhai, I want the single Jodi of today's Satta game.", gamePhone)}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-8 rounded-full text-lg shadow-lg transition transform hover:-translate-y-1"
@@ -137,7 +137,7 @@ export default function TajSattaKingBannerOne() {
           <p className="text-blue-700 text-2xl font-bold">SATTA KING</p>
           <p className="text-green-700 text-2xl font-bold mb-6">{gamePhone}</p>
           <a
-            href={generateWhatsappLink("Hello Raaja Bhai, I want the single Jodi of today's Satta game.", gamePhone)}
+            href={generateWhatsappLink("Hello Rajan Bhai, I want the single Jodi of today's Satta game.", gamePhone)}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-xl text-lg shadow-lg transition transform hover:-translate-y-1"
@@ -180,7 +180,7 @@ export default function TajSattaKingBannerOne() {
         </div>
 
         <a
-          href={generateWhatsappLink("Hello Raaja Bhai, I want the single Jodi of today's Satta game.", khaiwalPhone)}
+          href={generateWhatsappLink("Hello Raaja Bhai, I am interested in your service .", khaiwalPhone)}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-8 rounded-full text-lg shadow-lg transition transform hover:-translate-y-1 inline-flex items-center justify-center gap-2"

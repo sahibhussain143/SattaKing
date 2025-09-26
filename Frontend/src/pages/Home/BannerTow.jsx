@@ -3,7 +3,7 @@ import React from "react";
 const BannerTwo = () => {
   const openWhatsApp = () => {
     const phoneNumber = "918813965623"; // country code + number (no +)
-    const message = "Hello Raaj Bhai Khaiwal I’m interested in your service.";
+    const message = "Hello Rajan Bhai I’m interested in your service.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     console.log("Opening WhatsApp URL:", url); // debug
     window.open(url, "_blank", "noopener,noreferrer");
