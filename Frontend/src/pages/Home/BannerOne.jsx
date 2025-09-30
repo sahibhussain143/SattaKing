@@ -92,7 +92,7 @@ import React from 'react'
 
 function BannerOne() {
   return (
-    <div>
+    <div className='mt-24'>
       BannerOne
     </div>
   )
