@@ -77,8 +77,8 @@ export default function BannerOne({
 
           {/* Small note */}
           <p className="mt-4 text-yellow-200 text-xs sm:text-sm md:text-base max-w-3xl mx-auto px-4 sm:px-0">
-            <span>नंबर सेव करके मैसेज करें — सिंगल जोड़ी में काम होगा। </span>
-            <span>नंबर सेव करे और मैसेज करे।</span>
+            <span>नंबर सेव करके मैसेज करें  —  सिंगल जोड़ी में काम होगा। </span>
+            <span>नंबर सेव करे  और मैसेज करे।</span>
           </p>
         </div>
       </section>
