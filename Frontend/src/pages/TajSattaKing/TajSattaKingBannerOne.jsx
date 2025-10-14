@@ -3,7 +3,7 @@ import { FaWhatsapp, FaTimes } from "react-icons/fa";
 
 export default function TajSattaKingBannerOne() {
   const gamePhone = "8813965623";       // Game number
-  const khaiwalPhone = "9728379960";    // Khaiwal number
+  const khaiwalPhone = "9306339090";    // Khaiwal number
 
   // Items for sidebar with label, message, and which number to use
   const sideBoxItems = [

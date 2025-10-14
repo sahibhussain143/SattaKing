@@ -191,10 +191,10 @@ const SattaChartBanner = () => {
           <p className="text-2xl md:text-3xl font-semibold text-orange-300 drop-shadow-md mb-3">
             🌟 जनता का विश्वास ही खाईवाल की पहचान है 🌟
           </p>
-          <h1 className="font-bold text-xl p-2 text-white">🪀9728379960🪀</h1>
+          <h1 className="font-bold text-xl p-2 text-white">🪀9306339090🪀</h1>
 
           <a
-            href={`https://wa.me/919728379960`}
+            href={`https://wa.me/919306339090`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-green-500 text-white text-lg px-4 py-1.5 rounded-full font-semibold shadow hover:bg-green-600 transition transform hover:scale-105"
