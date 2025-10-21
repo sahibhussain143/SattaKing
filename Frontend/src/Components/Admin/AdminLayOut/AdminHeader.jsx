@@ -34,7 +34,7 @@ const AdminEditForm = ({ initialName, initialImage, onClose, onSave }) => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 block w-full border outline-none border-pink-300 rounded-md shadow-sm p-2 focus:ring-pink-500 focus:border-pink-500"
+              className="mt-1 block w-full border outline-none border-blue-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -49,7 +49,7 @@ const AdminEditForm = ({ initialName, initialImage, onClose, onSave }) => {
               </div>
               <label
                 htmlFor="file-upload"
-                className="ml-5 bg-pink-500 text-white py-2 px-4 rounded-md cursor-pointer hover:bg-pink-600 transition-colors"
+                className="ml-5 bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer hover:bg-blue-600 transition-colors"
               >
                 Choose File
               </label>
@@ -72,7 +72,7 @@ const AdminEditForm = ({ initialName, initialImage, onClose, onSave }) => {
           </button>
           <button
             onClick={handleSave}
-            className="px-6 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors font-semibold"
+            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-semibold"
           >
             Save Changes
           </button>
@@ -94,7 +94,7 @@ const ProfileUpdatedPopup = ({ onClose }) => {
         <p className="text-gray-700 mb-6">Your profile has been updated.</p>
         <button
           onClick={onClose}
-          className="w-full px-6 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors font-semibold"
+          className="w-full px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-semibold"
         >
           OK
         </button>
@@ -125,7 +125,7 @@ const AdminHeader = ({ adminProfile, onProfileUpdate }) => {
               alt="Pink City Logo"
               className="h-8 w-8"
             />
-            <h2 className="pl-4 text-pink-500">Pink City</h2>
+            <h2 className="pl-4 text-blue-700">Satta King</h2>
           </div>
         </div>
 
@@ -141,7 +141,7 @@ const AdminHeader = ({ adminProfile, onProfileUpdate }) => {
             <span className="text-xs md:text-sm text-gray-600 font-medium">
               Welcome,
             </span>
-            <h2 className="text-sm md:text-lg font-semibold text-pink-600">
+            <h2 className="text-sm md:text-lg font-semibold text-blue-700">
               {adminProfile.name}
             </h2>
           </div>
