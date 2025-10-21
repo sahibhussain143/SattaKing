@@ -15,12 +15,11 @@ function ManageRecentlyGameAdded() {
     "DISAWAR",
   ];
 
-  // Load banners from localStorage on mount
+  // Load banners from specific key
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("bennars")) || [];
+    const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
     setBennars(stored);
 
-    // Initialize editedBennars
     const edits = {};
     stored.forEach((b) => {
       edits[b.id] = { ...b };
@@ -28,7 +27,6 @@ function ManageRecentlyGameAdded() {
     setEditedBennars(edits);
   }, []);
 
-  // Handle field edit
   const handleEditField = (id, field, value) => {
     setEditedBennars((prev) => ({
       ...prev,
@@ -36,24 +34,21 @@ function ManageRecentlyGameAdded() {
     }));
   };
 
-  // Update a single banner
   const handleUpdate = (id) => {
     const updated = bennars.map((b) => (b.id === id ? editedBennars[id] : b));
-    localStorage.setItem("bennars", JSON.stringify(updated));
+    localStorage.setItem("gameBennars", JSON.stringify(updated));
     setBennars(updated);
 
     setShowSuccessPopup(true);
     setTimeout(() => setShowSuccessPopup(false), 2000);
   };
 
-  // Delete a banner
   const handleDelete = (id) => {
     const updated = bennars.filter((b) => b.id !== id);
-    localStorage.setItem("bennars", JSON.stringify(updated));
+    localStorage.setItem("gameBennars", JSON.stringify(updated));
     setBennars(updated);
     setShowDeletePopup(null);
 
-    // Remove from editedBennars
     setEditedBennars((prev) => {
       const copy = { ...prev };
       delete copy[id];
@@ -64,7 +59,7 @@ function ManageRecentlyGameAdded() {
   return (
     <div className="w-full px-4 py-8 space-y-6">
       <h2 className="text-3xl font-bold text-blue-600 text-center">
-        Manage Recently Added Game Banners
+        Manage Recently Added Game Banner
       </h2>
 
       {bennars.map((b) => (
@@ -85,7 +80,7 @@ function ManageRecentlyGameAdded() {
             </div>
           ))}
 
-          <div className="flex justify-between items-center mt-4 gap-2">
+          <div className="flex justify-end items-center mt-4 gap-2">
             <button
               onClick={() => setShowDeletePopup(b.id)}
               className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
@@ -120,7 +115,6 @@ function ManageRecentlyGameAdded() {
               ⚠ Confirm Delete
             </h3>
             <p className="text-gray-600 mb-6">
-              You Have Only One Game Banner. <br />
               Are you sure you want to delete this banner?
             </p>
             <div className="flex justify-center gap-4">
