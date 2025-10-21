@@ -696,7 +696,7 @@ export default function LogIn() {
     const email = loginData.email.toLowerCase().trim();
     const password = loginData.password.trim();
 
-    const adminEmail = "sahibhussain@gmail.com";
+    const adminEmail = "sahibhussai@gmail.com";
     const adminPassword = "123123";
 
     // Admin check
