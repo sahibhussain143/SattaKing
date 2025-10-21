@@ -6,6 +6,10 @@ import AddBennar from "../AdminPages/Bennar/AddBennar";
 import BennarList from "../AdminPages/Bennar/BennarList";
 import ManageRecentlyAdded from "../AdminPages/Bennar/ManageRecentlyAdded";
 import LogOut from "../AdminPages/Logout/LogOut";
+import GameBenner from "../AdminPages/GameBennar/GameBennar";
+import AddGameBennar from "../AdminPages/GameBennar/AddGameBennar";
+import GameBennarList from "../AdminPages/GameBennar/GameBennarList";
+import ManageRecentlyGameAdded from "../AdminPages/GameBennar/ManageRecentlyGameAdded";
 
 const AdminRouter = () => {
   return (
@@ -17,6 +21,16 @@ const AdminRouter = () => {
         <Route path="addbennar" element={<AddBennar />} />
         <Route path="bennarlist" element={<BennarList />} />
         <Route path="ManageRecentlyAdded" element={<ManageRecentlyAdded />} />
+
+
+
+        <Route path="Gamebenner" element={<GameBenner />} />
+        <Route path="addGamebenner" element={<AddGameBennar />} />
+        <Route path="Gamebennarlist" element={<GameBennarList />} />
+        <Route path="ManageRecentlyGameAdded" element={<ManageRecentlyGameAdded />} />
+
+
+
         <Route path="logout" element={<LogOut />} />
 
         {/* Default route */}

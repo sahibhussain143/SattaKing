@@ -12,9 +12,14 @@ import {
   FaChartLine,
   FaCube,
   FaMoon,
+  FaGamepad,
+  FaGrinBeam,
+  FaGasPump,
+  FaGlobeAmericas,
+  FaGrinBeamSweat,
 } from 'react-icons/fa';
 import { SiFacebookgaming } from 'react-icons/si';
-import { FaArrowTrendDown, FaUserGroup, FaArrowRightFromBracket, FaLitecoinSign, FaGear } from 'react-icons/fa6';
+import { FaArrowTrendDown, FaUserGroup, FaArrowRightFromBracket, FaLitecoinSign, FaGear, FaGaugeSimple, FaMagnifyingGlass, FaMarsAndVenus } from 'react-icons/fa6';
 
 const AdminSidebar = ({ adminProfile }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -68,6 +73,35 @@ const AdminSidebar = ({ adminProfile }) => {
               </ul>
             )}
           </div>
+
+
+
+
+
+          <div className="group relative">
+            <div className={`flex items-center p-3 rounded-lg hover:bg-blue-100 hover:text-blue-600 cursor-pointer ${!isSidebarOpen && 'justify-center'}`}>
+              <FaGamepad className="h-5 w-5" />
+              {isSidebarOpen && (
+                <div className="ml-3 flex items-center justify-between w-full">
+                  <span>Game Benner</span>
+                  <FaChevronDown className="ml-2 group-hover:rotate-180 transition-transform duration-300" />
+                </div>
+              )}
+            </div>
+            {isSidebarOpen && (
+              <ul className="pl-6 pt-1 space-y-1 hidden group-hover:block">
+                <li><Link to="/admin/addGamebenner" className="flex items-center p-2 hover:bg-blue-100 hover:text-blue-600 rounded"><FaGaugeSimple className="mr-1" /> Add Game Bennar</Link></li>
+                <li><Link to="/admin/Gamebennarlist" className="flex items-center p-2 hover:bg-blue-100 hover:text-blue-600 rounded"><FaClipboard className="mr-1" /> Game Benner List</Link></li>
+                <li><Link to="/admin/ManageRecentlyGameAdded" className="flex items-center p-2 hover:bg-blue-100 hover:text-blue-600 rounded"><FaMarsAndVenus className="mr-1" />  Manage Games</Link></li>
+              </ul>
+            )}
+          </div>
+
+
+
+
+
+
           
           <Link to="/login" className={`flex items-center p-3 rounded-lg hover:bg-blue-100 hover:text-blue-600 ${!isSidebarOpen && 'justify-center'}`}>
             <FaArrowRightFromBracket className="h-5 w-5" />
