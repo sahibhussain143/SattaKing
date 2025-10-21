@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaUser, FaBars, FaTimes } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   // Handle scroll effect
@@ -55,8 +54,9 @@ const Navbar = () => {
               </span>
             </Link>
 
-            {/* Desktop Nav Links */}
-            <div className="hidden md:flex items-center space-x-3">
+            {/* Nav Links */}
+            <div className="flex items-center space-x-3">
+              {/* Main Links - always visible */}
               {mainNavItems.map((item) => (
                 <Link
                   key={item.name}
@@ -71,18 +71,18 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              {/* Extra Links only on desktop */}
+              {/* Extra Links - only on md+ */}
               {extraNavItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-purple-700 hover:text-amber-200"
+                  className="hidden md:block px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-purple-700 hover:text-amber-200"
                 >
                   {item.name}
                 </Link>
               ))}
 
-              {/* Login Icon */}
+              {/* Login Icon - always visible */}
               <Link
                 to="/login"
                 className="p-2 rounded-full text-white hover:text-amber-400 hover:bg-purple-700 transition-colors duration-300"
@@ -91,49 +91,8 @@ const Navbar = () => {
                 <FaUser size={20} />
               </Link>
             </div>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-white p-2 focus:outline-none"
-              >
-                {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-              </button>
-            </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-gradient-to-r from-purple-800 to-indigo-900 shadow-lg">
-            <div className="px-2 pt-2 pb-4 space-y-1">
-              {mainNavItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                    location.pathname === item.path
-                      ? "text-gray-900 bg-amber-500 shadow-lg"
-                      : "text-white hover:bg-purple-700 hover:text-amber-200"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-
-              {/* Login Icon in Mobile */}
-              <Link
-                to="/login"
-                className="flex items-center px-3 py-2 rounded-md text-white hover:text-amber-400 hover:bg-purple-700 transition-colors duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <FaUser size={20} className="mr-2" /> Login
-              </Link>
-            </div>
-          </div>
-        )}
 
         {/* Marquee */}
         <marquee
