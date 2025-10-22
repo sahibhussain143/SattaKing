@@ -149,74 +149,81 @@
 
 import React, { useEffect, useState } from "react";
 
+// Titles and times for the games
+const gameTitles = [
+  { key: "DELHI BAZAR", time: "10:00 AM" },
+  { key: "SHREE GANESH", time: "10:30 AM" },
+  { key: "FARIDABAD", time: "11:00 AM" },
+  { key: "GAZIYABAD", time: "11:30 AM" },
+  { key: "GALI", time: "12:00 PM" },
+  { key: "DISAWAR", time: "12:30 PM" },
+];
+
 function ManageRecentlyGameAdded() {
-  const [bennars, setBennars] = useState([]);
-  const [editedBennars, setEditedBennars] = useState({});
+  const [banners, setBanners] = useState([]);
+  const [editedBanners, setEditedBanners] = useState({});
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [showDeletePopup, setShowDeletePopup] = useState(null);
 
-  const titles = [
-    "DELHI BAZAR",
-    "SHREE GANESH",
-    "FARIDABAD",
-    "GAZIYABAD",
-    "GALI",
-    "DISAWAR",
-  ];
-
-  // Load banners and initialize edited state
+  // Load banners from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
-    setBennars(stored);
+    setBanners(stored);
 
     const edits = {};
     stored.forEach((b) => {
       edits[b.id] = { ...b };
     });
-    setEditedBennars(edits);
+    setEditedBanners(edits);
   }, []);
 
+  // Handle input changes
   const handleEditField = (id, field, value) => {
-    setEditedBennars((prev) => ({
+    setEditedBanners((prev) => ({
       ...prev,
       [id]: { ...prev[id], [field]: value },
     }));
   };
 
+  // Update banner
   const handleUpdate = (id) => {
-    const bannerToUpdate = editedBennars[id];
-    const lastSavedBanner = bennars.find((b) => b.id === id) || {};
-    const updatedBanner = { ...bannerToUpdate };
+    const bannerToUpdate = editedBanners[id];
+    const lastSavedBanner = banners.find((b) => b.id === id) || {};
 
-    // Set old result ONLY if user typed something previously, otherwise keep empty
-    titles.forEach((_, index) => {
+    const updatedBanner = {
+      ...bannerToUpdate,
+      isActive: true, // Always keep active
+    };
+
+    // Save old results
+    gameTitles.forEach((_, index) => {
       const key = `para${index + 1}`;
       const oldKey = `oldPara${index + 1}`;
-
-      if (updatedBanner[oldKey] === undefined) {
-        updatedBanner[oldKey] = lastSavedBanner[oldKey] || "";
-      }
+      // Preserve last saved old value or empty if user left it blank
+      updatedBanner[oldKey] =
+        lastSavedBanner[key] !== undefined ? lastSavedBanner[key] : "";
     });
 
-    const updatedBennarsList = bennars.map((b) =>
+    const updatedBannersList = banners.map((b) =>
       b.id === id ? updatedBanner : b
     );
 
-    localStorage.setItem("gameBennars", JSON.stringify(updatedBennarsList));
-    setBennars(updatedBennarsList);
-    setEditedBennars((prev) => ({ ...prev, [id]: updatedBanner }));
+    localStorage.setItem("gameBennars", JSON.stringify(updatedBannersList));
+    setBanners(updatedBannersList);
+    setEditedBanners((prev) => ({ ...prev, [id]: updatedBanner }));
 
     setShowSuccessPopup(true);
     setTimeout(() => setShowSuccessPopup(false), 2000);
   };
 
+  // Delete banner
   const handleDelete = (id) => {
-    const updated = bennars.filter((b) => b.id !== id);
+    const updated = banners.filter((b) => b.id !== id);
     localStorage.setItem("gameBennars", JSON.stringify(updated));
-    setBennars(updated);
+    setBanners(updated);
     setShowDeletePopup(null);
 
-    setEditedBennars((prev) => {
+    setEditedBanners((prev) => {
       const copy = { ...prev };
       delete copy[id];
       return copy;
@@ -229,46 +236,52 @@ function ManageRecentlyGameAdded() {
         Manage Recently Added Game Banner
       </h2>
 
-      {bennars.map((b) => (
+      {banners.map((b) => (
         <div
           key={b.id}
           className="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-3 w-full"
         >
-          {titles.map((title, index) => {
+          {gameTitles.map((game, index) => {
             const key = `para${index + 1}`;
             const oldKey = `oldPara${index + 1}`;
-            const newValue = editedBennars[b.id]?.[key] || "";
-            const oldValue = editedBennars[b.id]?.[oldKey] || "";
+            const newValue = editedBanners[b.id]?.[key] || "";
+            let oldValue = editedBanners[b.id]?.[oldKey];
+            if (!oldValue) oldValue = "...";
 
             return (
               <div key={index} className="flex flex-col gap-1">
-                <h4 className="font-semibold text-lg text-blue-600">{title}</h4>
-                <div className="flex gap-4 items-center">
-                  {/* Old Result Input */}
+                <h4 className="font-semibold text-lg text-blue-600">
+                  {game.key}
+                </h4>
+                <div className="flex gap-2 items-center">
+                  {/* Old Result */}
                   <input
                     type="text"
                     value={oldValue}
                     onChange={(e) =>
                       handleEditField(b.id, oldKey, e.target.value)
                     }
-                    className="w-24 border rounded-lg p-2 text-sm text-gray-600"
-                    placeholder="Old"
+                    className="text-gray-600 bg-gray-200 px-2 py-1 rounded w-24 text-center"
                   />
-                  {/* New Result Input */}
+
+                  {/* Arrow */}
+                  <span className="text-xl font-bold text-gray-800">→</span>
+
+                  {/* New Result */}
                   <input
                     type="text"
                     value={newValue}
                     onChange={(e) =>
                       handleEditField(b.id, key, e.target.value)
                     }
-                    className="flex-grow border rounded-lg p-2 text-sm"
-                    placeholder="New"
+                    className="text-green-600 font-bold px-2 py-1 rounded w-24 text-center bg-black/70"
                   />
                 </div>
               </div>
             );
           })}
 
+          {/* Buttons */}
           <div className="flex justify-end items-center mt-4 gap-2">
             <button
               onClick={() => setShowDeletePopup(b.id)}
