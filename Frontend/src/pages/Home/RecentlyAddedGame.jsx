@@ -22,12 +22,26 @@ function RecentlyAddedGame() {
     "12:30 PM",
   ];
 
+  // Load active banners
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
-    setBennars(stored.filter((b) => b.isActive));
+    const loadBennars = () => {
+      const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
+      const active = stored.filter((b) => b.isActive);
+      setBennars(active);
+    };
 
-    const timer = setInterval(() => setMainTime(new Date()), 1000);
-    return () => clearInterval(timer);
+    loadBennars();
+
+    // Optional: auto-refresh every 5 seconds to reflect updates
+    const interval = setInterval(loadBennars, 5000);
+
+    // Live clock update
+    const clockTimer = setInterval(() => setMainTime(new Date()), 1000);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(clockTimer);
+    };
   }, []);
 
   const formattedMainTime = mainTime.toLocaleString("en-GB", {
@@ -47,17 +61,20 @@ function RecentlyAddedGame() {
       </p>
     );
 
+  // Always display the first active banner's new results
+  const banner = bennars[0];
+
   return (
     <div className="w-full bg-white min-h-screen flex flex-col items-center">
+      {/* Header */}
       <div className="w-full bg-blue-600 py-6 text-center text-white">
         <h1 className="text-3xl font-bold tracking-wide uppercase">
           SATTA-KING Live Result
         </h1>
-        <p className="text-sm mt-1">
-          SATTA KING | SATTA RESULT | SATTA RECORD
-        </p>
+        <p className="text-sm mt-1">SATTA KING | SATTA RESULT | SATTA RECORD</p>
       </div>
 
+      {/* Current Date & Time */}
       <div className="w-full text-center py-4">
         <h2 className="text-2xl font-bold text-pink-600">
           {formattedMainTime.toUpperCase()}
@@ -67,25 +84,19 @@ function RecentlyAddedGame() {
         </p>
       </div>
 
+      {/* Games List */}
       <div className="flex flex-col items-center w-full px-4 pb-10">
-        {bennars.map((b) => (
-          <div
-            key={b.id}
-            className="w-full max-w-5xl text-center bg-white border-y-4 border-blue-600 py-8 mt-4 shadow-md"
-          >
-            {titles.map((title, i) => (
-              <div key={i} className="mb-8">
-                <h3 className="text-4xl font-bold text-red-600">{title}</h3>
-                <p className="text-sm text-gray-500 mt-1">{titleTimes[i]}</p>
-                {b[`para${i + 1}`] && (
-                  <p className="text-3xl font-bold text-white mt-3 bg-black/70 px-6 py-3 rounded-lg inline-block">
-                    {b[`para${i + 1}`]}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-        ))}
+        <div className="w-full max-w-5xl text-center bg-white border-y-4 border-blue-600 py-8 shadow-md">
+          {titles.map((title, i) => (
+            <div key={i} className="mb-8">
+              <h3 className="text-4xl font-bold text-red-600">{title}</h3>
+              <p className="text-sm text-gray-500 mt-1">{titleTimes[i]}</p>
+              <p className="text-3xl font-bold text-white mt-3 bg-black/70 px-6 py-3 rounded-lg inline-block">
+                {banner[`para${i + 1}`] || "--"}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="w-full bg-blue-600 h-3" />

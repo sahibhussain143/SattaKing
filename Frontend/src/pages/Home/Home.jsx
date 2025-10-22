@@ -7,6 +7,7 @@ import ExtraThingsHome from './ExtraThingsHome';
 import SattaChart from '../SattaChart/SattaChart';
 import RecentlyAdded from './RecentlyAdded';
 import RecentlyAddedGame from './RecentlyAddedGame';
+import RecentlyAddedGameList from './RecentlyAddedGameList';
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
       <RecentlyAddedGame/>
       <RecentlyAdded/>
       <BannerTwo />
-
+<RecentlyAddedGameList/>
       <TajSattaKing />
 
       <SattaChart />
