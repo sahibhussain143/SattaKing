@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 
+const gameTitles = [
+  "DELHI BAZAR",
+  "SHREE GANESH",
+  "FARIDABAD",
+  "GAZIYABAD",
+  "GALI",
+  "DISAWAR",
+];
+
 function AddGameBennar({ onAddEvent }) {
   const [form, setForm] = useState({
     para1: "",
@@ -10,16 +19,6 @@ function AddGameBennar({ onAddEvent }) {
     para6: "",
   });
   const [showPopup, setShowPopup] = useState(false);
-  const [showAlreadyPopup, setShowAlreadyPopup] = useState(false);
-
-  const titles = [
-    "DELHI BAZAR",
-    "SHREE GANESH",
-    "FARIDABAD",
-    "GAZIYABAD",
-    "GALI",
-    "DISAWAR",
-  ];
 
   const handleChange = (key, value) => {
     setForm({ ...form, [key]: value });
@@ -28,23 +27,16 @@ function AddGameBennar({ onAddEvent }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const stored = JSON.parse(localStorage.getItem("bennars")) || [];
+    const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
 
-    if (stored.length > 0) {
-      // Banner already exists
-      setShowAlreadyPopup(true);
-      return;
-    }
-
-    const newBennar = {
+    const newBanner = {
       id: Date.now(),
       ...form,
-      date: new Date().toLocaleDateString(),
-      isActive: true,
+      isActive: true, // Always active
     };
 
-    localStorage.setItem("bennars", JSON.stringify([newBennar]));
-    if (onAddEvent) onAddEvent(newBennar);
+    localStorage.setItem("gameBennars", JSON.stringify([newBanner, ...stored]));
+    if (onAddEvent) onAddEvent(newBanner);
 
     setForm({
       para1: "",
@@ -66,7 +58,7 @@ function AddGameBennar({ onAddEvent }) {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {titles.map((title, index) => (
+          {gameTitles.map((title, index) => (
             <div key={index}>
               <label className="block mb-1 font-medium text-blue-700">
                 {title}
@@ -78,7 +70,6 @@ function AddGameBennar({ onAddEvent }) {
                 }
                 className="w-full p-3 border border-blue-400 rounded-xl focus:ring-2 focus:ring-blue-500 resize-none h-20 text-blue-700"
                 placeholder={`Enter paragraph for ${title}`}
-                required
               />
             </div>
           ))}
@@ -103,26 +94,6 @@ function AddGameBennar({ onAddEvent }) {
             <button
               onClick={() => setShowPopup(false)}
               className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
-            >
-              OK
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Already Exists Warning Popup */}
-      {showAlreadyPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
-          <div className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-xl text-center">
-            <h3 className="text-xl font-bold text-red-600 mb-4">
-              ⚠ Warning!
-            </h3>
-            <p className="text-gray-600 mb-6">
-              A banner is already added. Cannot add another.
-            </p>
-            <button
-              onClick={() => setShowAlreadyPopup(false)}
-              className="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition"
             >
               OK
             </button>

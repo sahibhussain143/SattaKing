@@ -149,7 +149,6 @@
 
 import React, { useEffect, useState } from "react";
 
-// Titles and times for the games
 const gameTitles = [
   { key: "DELHI BAZAR", time: "10:00 AM" },
   { key: "SHREE GANESH", time: "10:30 AM" },
@@ -165,7 +164,7 @@ function ManageRecentlyGameAdded() {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [showDeletePopup, setShowDeletePopup] = useState(null);
 
-  // Load banners from localStorage
+  // Load banners
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
     setBanners(stored);
@@ -177,7 +176,7 @@ function ManageRecentlyGameAdded() {
     setEditedBanners(edits);
   }, []);
 
-  // Handle input changes
+  // Input change
   const handleEditField = (id, field, value) => {
     setEditedBanners((prev) => ({
       ...prev,
@@ -192,14 +191,13 @@ function ManageRecentlyGameAdded() {
 
     const updatedBanner = {
       ...bannerToUpdate,
-      isActive: true, // Always keep active
+      isActive: true, // Always active
     };
 
     // Save old results
     gameTitles.forEach((_, index) => {
       const key = `para${index + 1}`;
       const oldKey = `oldPara${index + 1}`;
-      // Preserve last saved old value or empty if user left it blank
       updatedBanner[oldKey] =
         lastSavedBanner[key] !== undefined ? lastSavedBanner[key] : "";
     });
@@ -281,7 +279,6 @@ function ManageRecentlyGameAdded() {
             );
           })}
 
-          {/* Buttons */}
           <div className="flex justify-end items-center mt-4 gap-2">
             <button
               onClick={() => setShowDeletePopup(b.id)}
