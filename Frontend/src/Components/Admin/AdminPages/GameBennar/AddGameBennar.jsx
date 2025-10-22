@@ -29,14 +29,17 @@ function AddGameBennar({ onAddEvent }) {
 
     const stored = JSON.parse(localStorage.getItem("gameBennars")) || [];
 
-    const newBanner = {
+    const newBennar = {
       id: Date.now(),
       ...form,
-      isActive: true, // Always active
+      isActive: true,
     };
 
-    localStorage.setItem("gameBennars", JSON.stringify([newBanner, ...stored]));
-    if (onAddEvent) onAddEvent(newBanner);
+    // Add new banner at the beginning
+    const updatedBanners = [newBennar, ...stored];
+    localStorage.setItem("gameBennars", JSON.stringify(updatedBanners));
+
+    if (onAddEvent) onAddEvent(newBennar);
 
     setForm({
       para1: "",
