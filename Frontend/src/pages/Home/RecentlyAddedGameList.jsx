@@ -26,7 +26,7 @@ function RecentlyAddedGameList() {
   if (!bennars.length)
     return (
       <p className="text-center mt-6 text-gray-500 text-xl">
-        No banners added yet.
+        No banners added .
       </p>
     );
 
