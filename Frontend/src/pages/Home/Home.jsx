@@ -8,6 +8,7 @@ import SattaChart from '../SattaChart/SattaChart';
 import RecentlyAdded from './RecentlyAdded';
 import RecentlyAddedGame from './RecentlyAddedGame';
 import RecentlyAddedGameList from './RecentlyAddedGameList';
+import SattaChartBanner from '../SattaChart/SattaChartBanner';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <BannerOne />
       <RecentlyAddedGame/>
       <RecentlyAdded/>
+      <SattaChartBanner/>
       <BannerTwo />
 <RecentlyAddedGameList/>
       <TajSattaKing />

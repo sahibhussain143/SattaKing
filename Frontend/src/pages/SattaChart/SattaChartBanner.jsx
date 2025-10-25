@@ -90,58 +90,9 @@ const SattaChartBanner = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black">
-      {/* SATTA CHART TABLES */}
-      <h1 className="text-center text-red-500 text-2xl md:text-3xl font-bold mb-2">
-        SATTA GAME CHART
-      </h1>
 
-      <div className="w-full">
-        {sattaData.map((section, index) => (
-          <div key={index} className="mb-4 bg-white w-full">
-            <h2 className="bg-black text-yellow-300 text-center font-bold py-1 text-lg md:text-xl">
-              {section.title}
-            </h2>
-
-            <table className="w-full border-collapse text-center text-sm md:text-base">
-              <thead>
-                <tr className="bg-gray-200 text-blue-900 ">
-                  <th className="py-1 px-1 border border-black">Name</th>
-                  <th className="py-1 px-1 border border-black">Number</th>
-                  <th className="py-1 px-1 border border-black">Social</th>
-                </tr>
-              </thead>
-              <tbody>
-                {section.items.map((item, i) => (
-                  <tr
-                    key={i}
-                    className={`${
-                      i % 2 === 0 ? "bg-white" : "bg-gray-100"
-                    } text-blue-900`}
-                  >
-                    <td className="py-1 px-1 border border-black font-semibold uppercase">
-                      {item.name}
-                    </td>
-                    <td className="py-1 px-1 border border-black">{item.number}</td>
-                    <td className="py-1 px-1 border border-black flex justify-center gap-2">
-                      {/* Changed here, removed item param */}
-                      <FaWhatsapp
-                        onClick={openWhatsApp}
-                        className="text-green-600 cursor-pointer text-lg hover:scale-110 transition"
-                      />
-                      <FaTelegramPlane
-                        onClick={openTelegram}
-                        className="text-blue-500 cursor-pointer text-lg hover:scale-110 transition"
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ))}
-      </div>
-
+    <>
+    
       {/* Banner Section */}
       <div className="text-center p-6 md:p-12 space-y-6 bg-gradient-to-b from-blue-900 to-blue-600">
         <h1 className="text-5xl md:text-6xl font-extrabold text-pink-400 drop-shadow-lg">
@@ -210,7 +161,60 @@ const SattaChartBanner = () => {
           </button>
         </div>
       </div>
+    <div className="bg-gradient-to-b from-gray-900 to-black">
+      {/* SATTA CHART TABLES */}
+      <h1 className="text-center text-red-500 text-2xl md:text-3xl font-bold mb-2">
+        SATTA GAME CHART
+      </h1>
+
+      <div className="w-full">
+        {sattaData.map((section, index) => (
+          <div key={index} className="mb-4 bg-white w-full">
+            <h2 className="bg-black text-yellow-300 text-center font-bold py-1 text-lg md:text-xl">
+              {section.title}
+            </h2>
+
+            <table className="w-full border-collapse text-center text-sm md:text-base">
+              <thead>
+                <tr className="bg-gray-200 text-blue-900 ">
+                  <th className="py-1 px-1 border border-black">Name</th>
+                  <th className="py-1 px-1 border border-black">Number</th>
+                  <th className="py-1 px-1 border border-black">Social</th>
+                </tr>
+              </thead>
+              <tbody>
+                {section.items.map((item, i) => (
+                  <tr
+                    key={i}
+                    className={`${
+                      i % 2 === 0 ? "bg-white" : "bg-gray-100"
+                    } text-blue-900`}
+                  >
+                    <td className="py-1 px-1 border border-black font-semibold uppercase">
+                      {item.name}
+                    </td>
+                    <td className="py-1 px-1 border border-black">{item.number}</td>
+                    <td className="py-1 px-1 border border-black flex justify-center gap-2">
+                      {/* Changed here, removed item param */}
+                      <FaWhatsapp
+                        onClick={openWhatsApp}
+                        className="text-green-600 cursor-pointer text-lg hover:scale-110 transition"
+                      />
+                      <FaTelegramPlane
+                        onClick={openTelegram}
+                        className="text-blue-500 cursor-pointer text-lg hover:scale-110 transition"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </div>
+
     </div>
+    </>
   );
 };
 

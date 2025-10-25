@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const FloatingButtons = () => {
   const openWhatsApp = () => {
-    const phoneNumber = '918813965623'; // Country code + phone number (India)
+    const phoneNumber = '919306339090'; // Country code + phone number (India)
     const message = "Hello Raja Bhai! I'm interested in knowing more about Satta King!";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
