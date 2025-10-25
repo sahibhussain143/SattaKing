@@ -7,6 +7,8 @@ import Updates from "../../pages/Updates/Updates";
 import LogIn from "../../pages/Login/LogIn";
 import AdminRouter from "../Admin/AdminRouter/AdminRouter";
 import Navbar from "../Navbar";
+import FloatingButtonsTelegram from "../FloatingButtonsTelegram";
+import FloatingButtons from "../FloatingButtons";
 
 const AppRouter = () => {
   return (
@@ -36,10 +38,13 @@ const MainRoutes = () => {
 
         {/* Admin Routes */}
         <Route path="/admin/*" element={<AdminRouter />} />
-
+       
         {/* Fallback */}
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
+
+       <FloatingButtonsTelegram/>
+//         <FloatingButtons/>
     </>
   );
 };
