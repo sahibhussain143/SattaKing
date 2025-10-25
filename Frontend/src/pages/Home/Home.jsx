@@ -18,7 +18,7 @@ function Home() {
       <RecentlyAdded/>
       <SattaChartBanner/>
       <BannerTwo />
-<RecentlyAddedGameList/>
+{/* <RecentlyAddedGameList/> */}
       <TajSattaKing />
 
       <SattaChart />

@@ -1,6 +1,7 @@
 // src/components/SattaChartBanner.js
 import React from "react";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
+import RecentlyAddedGameList from "../Home/RecentlyAddedGameList";
 
 const sattaData = [
   {
@@ -161,6 +162,7 @@ const SattaChartBanner = () => {
           </button>
         </div>
       </div>
+      <RecentlyAddedGameList/>
     <div className="bg-gradient-to-b from-gray-900 to-black">
       {/* SATTA CHART TABLES */}
       <h1 className="text-center text-red-500 text-2xl md:text-3xl font-bold mb-2">
