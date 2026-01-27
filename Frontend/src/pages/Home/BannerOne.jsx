@@ -6,7 +6,7 @@ export default function BannerOne({
   subtitle = "नंबर सेव करके मैसेज करो कन्फर्म गेम लेने के लिए जल्दी वाट्सऐप पे मैसेज कीजिए",
   name = "👑👑 RAJAN BHAI 👑👑",
   branch = "SATTA KING HEAD BRANCH MUMBAI",
-  phone = "881396563",
+  phone = "8813965623",
 }) {
   const telLink = `tel:${phone}`;
   const whatsappLink = `https://wa.me/91${phone.replace(/\D/g, "")}`;
