@@ -92,12 +92,12 @@ const SattaChartSattaTableOne = () => {
         </div>
 
         <div className="mt-8">
-          <p className="text-xl">📞 9306339090</p>
+          <p className="text-xl">📞 7027315623</p>
         </div>
 
         <div className="mt-6 w-[200px] mx-auto">
           <a
-            href={`https://wa.me/9306339090?text=${encodeURIComponent(message)}`}
+            href={`https://wa.me/917027315623?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-full text-lg"
