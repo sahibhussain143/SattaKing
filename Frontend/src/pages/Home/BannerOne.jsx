@@ -12,7 +12,7 @@ export default function BannerOne({
   const whatsappLink = `https://wa.me/91${phone.replace(/\D/g, "")}`;
 
   return (
-   <section className="w-full mt-16 bg-gradient-to-b from-[#04232b] via-[#07323a] to-[#0f3f41] text-center py-10 px-4">
+   <section className="w-full pt-[70px] mt-16 bg-gradient-to-b from-[#04232b] via-[#07323a] to-[#0f3f41] text-center py-10 px-4">
 
       <div className="max-w-6xl mx-auto  ">
         {/* Title */}
