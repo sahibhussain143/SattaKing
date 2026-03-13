@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function SattaChartSattaCalendar() {
-  const phoneNumber = "918813965623";
+  const phoneNumber = "918875156232";
 
   const games = useMemo(
     () => ["CHAR MINAR", "DISAWER", "FARIDABAD", "GHAZIYABAD"],

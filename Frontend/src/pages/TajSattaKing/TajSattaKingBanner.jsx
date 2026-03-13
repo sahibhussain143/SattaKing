@@ -2,7 +2,7 @@ import React from "react";
 
 const TajSattaKingBanner = () => {
   const openWhatsApp = () => {
-    const phoneNumber = "918813965623"; // country code + number (no '+')
+    const phoneNumber = "918875156232"; // country code + number (no '+')
     const message = "Hello Rajan Bhai I’m interested in your service.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
@@ -34,7 +34,7 @@ const TajSattaKingBanner = () => {
         </h3>
 
         {/* Number */}
-        <p className="text-green-600 font-bold text-2xl mb-4">8813965623</p>
+        <p className="text-green-600 font-bold text-2xl mb-4">8875156232</p>
 
         {/* WhatsApp Button */}
         <button
@@ -68,7 +68,7 @@ const TajSattaKingBanner = () => {
         </h3>
 
         {/* Number */}
-        <p className="text-green-600 font-bold text-2xl mb-4">8813965623</p>
+        <p className="text-green-600 font-bold text-2xl mb-4">8875156232</p>
 
         {/* WhatsApp Button */}
         <button
